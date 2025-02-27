@@ -4,3 +4,4 @@ python-dotenv
 openai
 demjson3
 ics
+python-multipart
