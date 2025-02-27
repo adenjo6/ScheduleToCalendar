@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -25,21 +25,10 @@ jobs:
         run: |
           npm install
           npm run build
-
-      - name: Configure Git
-        run: |
-          git config --global user.email "adenjo@ucsb.edu"
-          git config --global user.name "Aden"
-
-      - name: Build and Deploy
-        run: npm run deploy
-        working-directory: ./frontend
-        env:
-          CI: false
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # - name: Deploy to GitHub Pages
-      #   uses: JamesIves/github-pages-deploy-action@v4
-      #   with:
-      #     branch: gh-pages           
-      #     folder: frontend/build     
-      #     token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages           
+          folder: frontend/build     
+          token: ${{ secrets.GITHUB_TOKEN }}
