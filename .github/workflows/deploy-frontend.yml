@@ -24,22 +24,22 @@ jobs:
         working-directory: ./frontend
         run: |
           npm install
-          npm run build
+          # npm run build
 
-      # - name: Configure Git
-      #   run: |
-      #     git config --global user.email "adenjo@ucsb.edu"
-      #     git config --global user.name "Aden"
+      - name: Configure Git
+        run: |
+          git config --global user.email "adenjo@ucsb.edu"
+          git config --global user.name "Aden"
 
-      # - name: Build and Deploy
-      #   run: npm run deploy
-      #   working-directory: ./frontend
-      #   env:
-      #     CI: false
-      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages           
-          folder: frontend/build     
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and Deploy
+        run: npm run deploy
+        working-directory: ./frontend
+        env:
+          CI: false
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Deploy to GitHub Pages
+      #   uses: JamesIves/github-pages-deploy-action@v4
+      #   with:
+      #     branch: gh-pages           
+      #     folder: frontend/build     
+      #     token: ${{ secrets.GITHUB_TOKEN }}
