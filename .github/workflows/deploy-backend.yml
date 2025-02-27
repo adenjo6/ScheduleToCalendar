@@ -1,3 +1,35 @@
+name: Deploy Backend on Heroku
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Heroku CLI
+        run: |
+          curl https://cli-assets.heroku.com/install.sh | sh
+
+      - name: Set Heroku Remote
+        run: heroku git:remote -a adenjo6
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.14.15
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: "adenjo6"
+          heroku_email: "adenjo@ucsb.edu"
 # name: Deploy Backend to Heroku
 
 # on:
@@ -36,26 +68,5 @@
 #           git config --global user.email "adenjo@ucsb.edu"
 #           git config --global user.name "Aden"
 #           git subtree push --prefix backend heroku main
-name: Deploy Backend on Heroku
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install Heroku CLI 
-        run: |
-          curl https://cli-assets.heroku.com/install.sh | sh 
-      - uses: akhileshns/heroku-deploy@v3.14.15 
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "adenjo6" 
-          heroku_email: "adenjo@ucsb.edu"
