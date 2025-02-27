@@ -21,17 +21,25 @@ jobs:
           node-version: '16'
 
       - name: Install dependencies
-        run: npm install
         working-directory: ./frontend
-
-      - name: Configure Git
         run: |
-          git config --global user.email "adenjo@ucsb.edu"
-          git config --global user.name "Aden"
+          npm install
+          npm run build
 
-      - name: Build and Deploy
-        run: npm run deploy
-        working-directory: ./frontend
-        env:
-          CI: false
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Configure Git
+      #   run: |
+      #     git config --global user.email "adenjo@ucsb.edu"
+      #     git config --global user.name "Aden"
+
+      # - name: Build and Deploy
+      #   run: npm run deploy
+      #   working-directory: ./frontend
+      #   env:
+      #     CI: false
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages           
+          folder: frontend/build     
+          token: ${{ secrets.GITHUB_TOKEN }}
