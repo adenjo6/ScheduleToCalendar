@@ -5,3 +5,4 @@ frontend/node_modules/
 # Ignore environment variables
 backend/.env
 frontend/.env
+.github/workflows/.env
