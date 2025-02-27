@@ -40,7 +40,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000","http://adenjo6.github.io/ScheduleToCalendar", "https://adenjo6.github.io/ScheduleToCalendar"],
+    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000","http://adenjo6.github.io/ScheduleToCalendar/", "https://adenjo6.github.io/ScheduleToCalendar/"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
