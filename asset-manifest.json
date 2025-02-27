@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ScheduleToCalendar/static/css/main.d3850325.css",
-    "main.js": "/ScheduleToCalendar/static/js/main.e3fd8bcd.js",
+    "main.js": "/ScheduleToCalendar/static/js/main.fe91f4f6.js",
     "static/js/453.8ab44547.chunk.js": "/ScheduleToCalendar/static/js/453.8ab44547.chunk.js",
     "index.html": "/ScheduleToCalendar/index.html",
     "main.d3850325.css.map": "/ScheduleToCalendar/static/css/main.d3850325.css.map",
-    "main.e3fd8bcd.js.map": "/ScheduleToCalendar/static/js/main.e3fd8bcd.js.map",
+    "main.fe91f4f6.js.map": "/ScheduleToCalendar/static/js/main.fe91f4f6.js.map",
     "453.8ab44547.chunk.js.map": "/ScheduleToCalendar/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d3850325.css",
-    "static/js/main.e3fd8bcd.js"
+    "static/js/main.fe91f4f6.js"
   ]
 }
