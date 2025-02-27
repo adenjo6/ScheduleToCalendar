@@ -75,7 +75,7 @@ function App() {
         </div>
         {scheduleImgURL && <img src={scheduleImgURL} className="imageSchedule" alt="Uploaded Schedule" />}
 
-        <button onClick={processSchedule}>Process your Schedule!</button>
+        <button onClick={processSchedule}>Process your Schedule</button>
         <p className="message">{message}</p>
       </header>
     </div>
