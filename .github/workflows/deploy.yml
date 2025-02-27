@@ -24,13 +24,9 @@ jobs:
         run: npm install
         working-directory: ./frontend
 
-      - name: Configure Git
-        run: |
-          git config --global user.email "adenjo@ucsb.edu"
-          git config --global user.name "Aden Jo"
-          
       - name: Build and Deploy
         run: npm run deploy
         working-directory: ./frontend
         env:
           CI: false
+          GH_TOKEN: ${{ secrets.ADEN }}
